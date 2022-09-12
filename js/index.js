@@ -29,6 +29,11 @@
 
     localStorage.setItem('pais', pais)
 
+
+    let pBienvenida = document.querySelector('.tuPais');
+
+    pBienvenida.innerText = ('Hola, estas en ' + pais) 
+
 })() 
 
 
@@ -157,7 +162,6 @@ if(recuperoStorage != null ){
 
     favoritos.map(favorito => {
         let idFav = favorito.id
-        /* favoritos[idFav - 1].like = true  */
 
         resultadoFavoritos.innerHTML += `
                 <article class="box-song asdddd" id="id-${favorito.id}" >
@@ -190,12 +194,6 @@ function addDeleteBtn() {
         console.log(e)
         const item = e.path[1];
         resultadoFavoritos.remove(item);
-        
-        /* swal.fire({
-
-            title: 'Eliminaste la lista de reproducción!',
-            text: 'Por favor, recargar la pagina antes de volver a añadir canciones a la lista'
-        }) */
         
         Swal.fire({
             title: 'Eliminaste la lista de reproducción!',

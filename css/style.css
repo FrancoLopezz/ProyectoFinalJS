@@ -124,13 +124,14 @@
     margin: 10px;
 }
 
+.tuPais{
+    margin: 10px;
+}
+
 .title{
     margin: 10px; 
 }
 
-/* .imgCancion{
-    display: none
-}  */
 
 /* MAIN */
 
@@ -223,7 +224,7 @@ a>span{
     border-radius: 20px;
 }
 
-/* Listas? */
+/* Listas */
 
 .containerArtist{
     grid-area: fav;
