@@ -1,6 +1,7 @@
 /* BIENVENIDA */
 
 (async () => {
+
     let {value:pais} = await swal.fire({
 
         title: 'Bienvenido!',
@@ -22,9 +23,14 @@
     });
 
     pais ? swal.fire({title: 'Excelente! \n Disfruta la experiencia'}) : swal.fire({title: 'No seleccionaste ningún país'}) 
-    
-    
+    console.log(pais)
+
+    localStorage.getItem(pais)
+
+    localStorage.setItem('pais', pais)
+
 })() 
+
 
 const fecha = document.querySelector('.fecha')
 
@@ -185,13 +191,31 @@ function addDeleteBtn() {
         const item = e.path[1];
         resultadoFavoritos.remove(item);
         
-        swal.fire({
+        /* swal.fire({
 
             title: 'Eliminaste la lista de reproducción!',
             text: 'Por favor, recargar la pagina antes de volver a añadir canciones a la lista'
-        })
+        }) */
         
-        localStorage.removeItem('favoritosStorage', )
+        Swal.fire({
+            title: 'Eliminaste la lista de reproducción!',
+            html: 'Por favor, recargar la pagina antes de volver a añadir canciones a la lista',
+            html: 'Este aviso desaparecera en <b></b> milisegundos. \n Por favor, recargar la pagina antes de volver a añadir canciones a la lista',
+            timer: 4000,
+            timerProgressBar: true,
+            didOpen: () => {
+              Swal.showLoading()
+              const b = Swal.getHtmlContainer().querySelector('b')
+              timerInterval = setInterval(() => {
+                b.textContent = Swal.getTimerLeft()
+              }, 100)
+            },
+            willClose: () => {
+              clearInterval(timerInterval)
+            }
+          })
+
+        localStorage.removeItem('favoritosStorage', favoritos )
     });
 
     let items = document.querySelector('.asdddd')

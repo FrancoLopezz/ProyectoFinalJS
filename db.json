@@ -70,5 +70,23 @@
     "like": false,
     "duracion": "3:24",
     "album": "Cabildo y Juramento"  
+    },
+    {
+    "id": 9,
+    "title": "Perdido (Chacarera)",
+    "artist": "Las Pastillas del Abuelo",
+    "imgSrc": "media/img/perdido.jpg",
+    "like": false,
+    "duracion": "3:37",
+    "album": "Por Colectora"  
+    },
+    {
+    "id": 10,
+    "title": "Goteo",
+    "artist": "Duki",
+    "imgSrc": "media/img/ssj.jpg",
+    "like": false,
+    "duracion": "2:44",
+    "album": "Súper Sangre Joven"  
     }
 ]
